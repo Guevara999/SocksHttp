@@ -14,10 +14,11 @@ jobs:
     - name: Checkout Source Code
       uses: actions/checkout@v4
 
-    - name: Set up JDK 17
+    # Fix: Downgrade to Java 8 so Gradle 2.14.1 can understand it
+    - name: Set up JDK 8
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '8'
         distribution: 'temurin'
         cache: gradle
 
